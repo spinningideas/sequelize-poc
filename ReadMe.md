@@ -10,19 +10,19 @@ You will need to change directory into the "server" folder to install and run th
 
 To get started perform the following steps:
 
-### 1) install PostGres 
+### 1) Install PostGre SQL
 
 https://www.postgresql.org/download/
 
-### 2) Create PostGres database to use in this POC
+### 2) Create PostGre SQL database to use in this POC
 
 After installing locally you should have database server with credentials and you next need to create empty database named "orm_poc"
 
-### 3) npm install
+### 3) Install npm packages
 
 You will need to change directory into the server folder to install and run the application
 
-Install the required packages after changing directory into the server folder
+Install the required packages after changing directory into the "server" folder
 
 ```npm install```
 
