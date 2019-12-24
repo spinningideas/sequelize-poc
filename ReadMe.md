@@ -1,6 +1,8 @@
 # Sequelize ORM POC
 
-The code in this repo demonstrates use of sequelize as an ORM using two tables with geography data sets.
+The code in this repo demonstrates use of [sequelize](https://sequelize.org/v5/) as an ORM using two tables with geography data sets (continents and countries).
+
+This proof of concept uses a repository to get data from database and uses [express](https://expressjs.com/).
 
 ## Get Started
 
