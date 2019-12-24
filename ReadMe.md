@@ -16,7 +16,7 @@ https://www.postgresql.org/download/
 
 ### 2) Create PostGre SQL database to use in this POC
 
-After installing locally you should have database server with credentials and you next need to create empty database named "orm_poc"
+After installing locally you should have database server and you need to enable credentials from Database.ts with access empty database named "orm_poc"
 
 ### 3) Install npm packages
 
