@@ -38,9 +38,9 @@ run the following command - see more: https://sequelize.org/master/manual/migrat
 
 ### 6) run the application
 
-The application is written in typescript and compiled into javascript in a "dist" folder - the command below will compile the app and run it.
+The application is configured to use nodemon to monitor for file changes and you can run command to start the application using it. You will see console information with url and port.
 
-```npm run build```
+```npm run start```
 
 ### 7) exercise the application via postman
 
