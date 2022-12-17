@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
     "password": "P0stGr3s",
-    "database": "orm_poc",
+    "database": "sequelize_orm_poc",
     "host": "localhost",
     "dialect": "postgres",
     "logging": "console.log"
