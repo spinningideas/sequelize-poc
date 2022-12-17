@@ -2,7 +2,13 @@
 
 The code in this repo demonstrates use of [sequelize](https://sequelize.org/v6/) as an ORM using two tables with geography data sets (continents and countries).
 
-This proof of concept uses a repository to get data from database and uses [express](https://expressjs.com/).
+This code uses the following libaries:
+
+- [sequelize](https://sequelize.org/v6/)
+- [express](https://expressjs.com/)
+- [postgresql](https://www.postgresql.org/)
+
+This proof of concept uses a repository to get data from database and via [express](https://expressjs.com/).
 
 ## Get Started
 
@@ -49,7 +55,6 @@ The application is configured to use nodemon to monitor for file changes and you
 1) https://www.thunderclient.com/
 
 2) https://www.getpostman.com - Download and install https://www.getpostman.com 
-
 
 #### 7.2 - Import "postman" collection and run requests
 

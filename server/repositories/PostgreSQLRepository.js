@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 function PostgreSQLRepository(sequelize, modelType) {
   this.sequelize = sequelize;
@@ -42,7 +42,7 @@ function PostgreSQLRepository(sequelize, modelType) {
   this.findAll = async () => {
     return this.getModel()
       .findAll({
-        raw: true
+        raw: true,
       })
       .then(
         (data) => {
@@ -55,16 +55,18 @@ function PostgreSQLRepository(sequelize, modelType) {
   };
 
   /**
-	 get all records having given criteria
+	 get all records having given "where" criteria
+   
+   findWhere({name: "foo"})
 	*/
   this.findWhere = async (criteria) => {
     return this.getModel()
       .findAll(
         {
-          where: criteria
+          where: criteria,
         },
         {
-          raw: true
+          raw: true,
         }
       )
       .then(
@@ -81,16 +83,22 @@ function PostgreSQLRepository(sequelize, modelType) {
 	 get all records having given criteria in a paged and sorted fashion
 	 using given pageNumber (1 based) and pageSize and order by data points
 	*/
-  this.findWherePagedSorted = async (criteria, pageNumber, pageSize, orderBy, orderDesc) => {
+  this.findWherePagedSorted = async (
+    criteria,
+    pageNumber,
+    pageSize,
+    orderBy,
+    orderDesc
+  ) => {
     if (pageNumber <= 0) {
       pageNumber = 1;
     }
 
     const offset = (pageNumber - 1) * pageSize;
     const limit = pageSize;
-    let orderDirection = 'ASC';
-    if (orderDesc.toLowerCase().toString() === 'true') {
-      orderDirection = 'DESC';
+    let orderDirection = "ASC";
+    if (orderDesc.toString().toLowerCase() === "true") {
+      orderDirection = "DESC";
     }
     const order = [[orderBy, orderDirection]];
 
@@ -111,10 +119,10 @@ function PostgreSQLRepository(sequelize, modelType) {
           limit,
           offset,
           where: criteria,
-          order
+          order,
         },
         {
-          raw: true
+          raw: true,
         }
       )
       .then(
@@ -136,10 +144,10 @@ function PostgreSQLRepository(sequelize, modelType) {
     return this.getModel()
       .findOne(
         {
-          where: criteria
+          where: criteria,
         },
         {
-          raw: true
+          raw: true,
         }
       )
       .then(
@@ -176,7 +184,7 @@ function PostgreSQLRepository(sequelize, modelType) {
       .update(entity, {
         where: criteria,
         raw: true,
-        returning: true
+        returning: true,
       })
       .then(
         (data) => {
@@ -195,7 +203,7 @@ function PostgreSQLRepository(sequelize, modelType) {
     this.getModel()
       .destroy({
         where: criteria,
-        raw: true
+        raw: true,
       })
       .then(
         () => {
