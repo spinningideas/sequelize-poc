@@ -7,7 +7,7 @@ const basename = path.basename(__filename);
 
 const config = {
   username: "postgres",
-  password: "P0stGr3s",
+  password: "CHANGE_ME_TO_VALID_ENTRY",
   database: "sequelize_orm_poc",
   host: "localhost",
   dialect: "postgres",

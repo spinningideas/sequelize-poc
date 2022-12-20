@@ -1,6 +1,6 @@
 "use strict";
 
-function PostgreSQLRepository(sequelize, modelType) {
+function SequelizeRepository(sequelize, modelType) {
   this.sequelize = sequelize;
   this.modelType = modelType;
   this.model = sequelize[modelType];
@@ -216,4 +216,4 @@ function PostgreSQLRepository(sequelize, modelType) {
   };
 }
 
-module.exports = PostgreSQLRepository;
+module.exports = SequelizeRepository;

@@ -3,7 +3,7 @@ const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const db = require("./Database");
-const PostgreSQLRepository = require("./repositories/PostgreSQLRepository");
+const SequelizeRepository = require("./repositories/SequelizeRepository");
 const PORT = process.env.PORT || 5001;
 const HOST = process.env.HOST || "localhost";
 
@@ -15,7 +15,7 @@ app.use(cors());
 // Setup routes
 //==continents=======================
 app.get("/continents", async (req, res) => {
-  const repo = new PostgreSQLRepository(db, "Continent");
+  const repo = new SequelizeRepository(db, "Continent");
   return await repo.findAll().then((continents) => {
     res.json(continents);
   });
@@ -23,7 +23,7 @@ app.get("/continents", async (req, res) => {
 //==countries==============================
 app.get("/countries/:continentCode", async (req, res) => {
   let continentCode = req.params.continentCode;
-  const repoCountries = new PostgreSQLRepository(db, "Country");
+  const repoCountries = new SequelizeRepository(db, "Country");
   return await repoCountries
     .findWhere({
       continentCode: continentCode,
@@ -50,7 +50,7 @@ app.get(
     const { orderBy } = req.params;
     const { orderDesc } = req.params;
 
-    const repoCountries = new PostgreSQLRepository(db, "Country");
+    const repoCountries = new SequelizeRepository(db, "Country");
     return await repoCountries
       .findWherePagedSorted(
         { continentCode: continentCode },
@@ -76,7 +76,7 @@ app.get(
 
 app.get("/country/:countryCode", async (req, res) => {
   let countryCode = req.params.countryCode;
-  const repoCountry = new PostgreSQLRepository(db, "Country");
+  const repoCountry = new SequelizeRepository(db, "Country");
   return await repoCountry
     .findOneWhere({ countryCode: countryCode })
     .then((results) => {

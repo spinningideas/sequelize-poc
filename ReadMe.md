@@ -6,7 +6,9 @@ This code uses the following libaries:
 
 - [sequelize](https://sequelize.org/v6/)
 - [express](https://expressjs.com/)
-- [postgresql](https://www.postgresql.org/)
+- [postgresql](https://www.postgresql.org/) - NOTE: could use any db sequelize supports
+- [sequelize-cli](https://github.com/sequelize/cli) - database migrations and seeding
+
 
 This proof of concept uses a repository to get data from database and via [express](https://expressjs.com/).
 
